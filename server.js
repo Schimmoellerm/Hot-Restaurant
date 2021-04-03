@@ -29,11 +29,9 @@ app.post('/api/tables', (req, res) => {
     res.json(reservations.length < 5);
 });
 
-
 app.post('/api/clear', (req, res) => {
-    const newReservation = req.body;
-
-    res.json(reservations.empty());
+    reservations.length = 0;
+    res.json(reservations);
 })
 
 
